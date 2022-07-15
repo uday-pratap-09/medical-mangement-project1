@@ -1,0 +1,99 @@
+<!-- Pills navs -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<body>
+  <br><br><br><br><br>
+    <div class="container">
+
+  <!-- Pills navs -->
+  <!-- Pills content -->
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+
+      <form name="theform" (ngSubmit)="bookAppointment()">
+  
+        <h1 class="text-center">Book Your Appointment here.</h1>
+
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+          <label class="form-label" for="opdId">OPD Name</label>
+          <input type="text" [(ngModel)]="opd.opdName" readonly class="form-control" name="opdName1" id="opdId1" onkeypress="document.theform.opdName.value = this.value"/>
+        </div>
+  
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+          <label class="form-label" for="consultant">Doctor Name</label>
+          <input type="text" [(ngModel)]="opd.consultantName" readonly name="consultantName1" id="consultant1" class="form-control" />
+        </div>
+  
+        <div class="form-outline mb-4">
+          <label class="form-label" for="loc">Location</label>
+          <input type="text" [(ngModel)]="opd.location" readonly name="location1" id="loc1" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="patName">Patient Name</label>
+          <input type="text" [(ngModel)]="appointmentData.patientName" name="patientName" id="patName" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="patGender">Patient Gender</label>
+          <select name="patientGender" [(ngModel)]="appointmentData.patientGender" class="form-control" id="patGender">
+            <option value="none" selected>Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="patAge">Patient Age</label>
+          <input type="text" [(ngModel)]="appointmentData.patientAge" name="patientAge" id="patAge" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="patMob">Patient Mobile</label>
+          <input type="tel" name="patientMobileNumber" [(ngModel)]="appointmentData.patientMobileNumber" id="patMob" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="patAdd">Patient Address</label>
+          <input type="text" name="patientAddress" [(ngModel)]="appointmentData.patientAddress" id="patAdd" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="appointmentda">Select Appointment Date</label>
+          <input type="date" name="appointmentDate" id="appointmentda" [(ngModel)]="appointmentData.appointmentDate" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="appointmentti">Select Appointment Time</label>
+          <input type="time" name="appointmentTime" [(ngModel)]="appointmentData.appointmentTime" id="appointmentti" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="patDis">Describe Symptoms</label>
+          <input type="text" name="patientDisease" [(ngModel)]="appointmentData.patientDisease" id="patDis" class="form-control" />
+        </div>
+        <!-- 2 column grid layout -->
+        <div class="row mb-4">
+          <div class="col-md-6 d-flex justify-content-center">
+            <!-- Checkbox -->
+            <div class="form-check mb-3 mb-md-0">
+              <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
+              <label class="form-check-label" for="loginCheck"> Remember me </label>
+            </div>
+          </div>
+  
+        </div>
+  
+        
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-3">Book Appointment</button>
+      </form>
+    </div>
+  </div>
+  <!-- Pills content -->
+</div>
+</body>
